@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SiteHeader } from "./components/SiteHeader";
 
 export const metadata: Metadata = {
   title: "Imec Oficina Mecânica | Nacionais e Importados em Itapevi",
@@ -36,32 +37,10 @@ const reviews = [
   },
 ];
 
-function WhatsAppIcon() {
-  return <span aria-hidden="true" className="wa-dot">↗</span>;
-}
-
 export default function Home() {
   return (
     <main>
-      <header className="site-header">
-        <a className="brand" href="#inicio" aria-label="Imec — início">
-          <img src="/imec/logo.jpg" alt="Imec Nacionais e Importados" />
-        </a>
-        <nav aria-label="Navegação principal">
-          <a href="#inicio">Home</a>
-          <a href="#sobre">Sobre nós</a>
-          <a href="#servicos">Serviços</a>
-          <a href="#localizacao">Localização</a>
-        </nav>
-        <a
-          className="button button-small"
-          href={whatsappLink("Olá, Imec! Quero solicitar um orçamento para meu veículo.")}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span className="button-label-full">Solicitar orçamento</span><span className="button-label-short">Orçamento</span> <WhatsAppIcon />
-        </a>
-      </header>
+      <SiteHeader whatsappHref={whatsappLink("Olá, Imec! Quero solicitar um orçamento para meu veículo.")} />
 
       <section className="hero" id="inicio">
         <div className="hero-media" aria-hidden="true">
@@ -84,7 +63,7 @@ export default function Home() {
               target="_blank"
               rel="noreferrer"
             >
-              Solicitar orçamento <WhatsAppIcon />
+              Solicitar orçamento
             </a>
             <a className="text-link light-link" href="#servicos">Conhecer os serviços ↓</a>
           </div>
@@ -116,12 +95,11 @@ export default function Home() {
                 <h3>{service.name}</h3>
                 <p>{service.detail}</p>
               </div>
-              <span className="service-arrow" aria-hidden="true">↗</span>
             </a>
           ))}
         </div>
         <div className="services-more">
-          <a className="button button-services" href="/servicos">Veja todos os serviços <span aria-hidden="true">→</span></a>
+          <a className="button button-services" href="/servicos">Veja todos os serviços</a>
         </div>
       </section>
 
@@ -149,7 +127,7 @@ export default function Home() {
             target="_blank"
             rel="noreferrer"
           >
-            Falar com a equipe <WhatsAppIcon />
+            Falar com a equipe
           </a>
         </div>
       </section>
@@ -166,7 +144,7 @@ export default function Home() {
             target="_blank"
             rel="noreferrer"
           >
-            Solicitar orçamento <WhatsAppIcon />
+            Solicitar orçamento
           </a>
         </div>
         <div className="reviews-list" aria-label="Avaliações de clientes no Google">
@@ -219,7 +197,7 @@ export default function Home() {
           target="_blank"
           rel="noreferrer"
         >
-          Solicitar orçamento <WhatsAppIcon />
+          Solicitar orçamento
         </a>
       </section>
 
@@ -241,7 +219,7 @@ export default function Home() {
         rel="noreferrer"
         aria-label="Falar com a Imec pelo WhatsApp"
       >
-        <span>WhatsApp</span><WhatsAppIcon />
+        <span>WhatsApp</span>
       </a>
     </main>
   );

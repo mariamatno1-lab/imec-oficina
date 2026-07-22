@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SiteHeader } from "../components/SiteHeader";
 
 export const metadata: Metadata = {
   title: "Serviços | Imec Oficina Mecânica em Itapevi",
@@ -22,20 +23,7 @@ const services = [
 export default function ServicesPage() {
   return (
     <main className="services-page">
-      <header className="site-header">
-        <a className="brand" href="/" aria-label="Imec — início">
-          <img src="/imec/logo.jpg" alt="Imec Nacionais e Importados" />
-        </a>
-        <nav aria-label="Navegação principal">
-          <a href="/">Home</a>
-          <a href="/#sobre">Sobre nós</a>
-          <a href="/servicos" aria-current="page">Serviços</a>
-          <a href="/#localizacao">Localização</a>
-        </nav>
-        <a className="button button-small" href={whatsappLink("orçamento")} target="_blank" rel="noreferrer">
-          <span className="button-label-full">Solicitar orçamento</span><span className="button-label-short">Orçamento</span> <span aria-hidden="true" className="wa-dot">↗</span>
-        </a>
-      </header>
+      <SiteHeader whatsappHref={whatsappLink("orçamento")} />
 
       <section className="services-hero">
         <p className="eyebrow light">Serviços da Imec</p>
@@ -49,7 +37,6 @@ export default function ServicesPage() {
             <a className="service-card" key={service.name} href={whatsappLink(service.name)} target="_blank" rel="noreferrer">
               <span className="service-index">{String(index + 1).padStart(2, "0")}</span>
               <div><h2>{service.name}</h2><p>{service.detail}</p></div>
-              <span className="service-arrow" aria-hidden="true">↗</span>
             </a>
           ))}
         </div>
