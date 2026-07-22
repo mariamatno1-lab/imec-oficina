@@ -6,12 +6,13 @@ export const metadata: Metadata = {
     "Mecânica em geral, injeção eletrônica, suspensão, embreagem, freios, motor e ABS em Itapevi.",
 };
 
-const whatsapp = "https://wa.me/5555945221201";
+const whatsapp = "https://wa.me/5511945221201";
 
 const whatsappLink = (message: string) =>
   `${whatsapp}?text=${encodeURIComponent(message)}`;
 
 const services = [
+  { name: "Mecânica em geral", detail: "Diagnóstico, manutenção preventiva e reparos para veículos nacionais e importados." },
   { name: "Injeção eletrônica", detail: "Diagnóstico e serviço para o sistema de injeção do veículo." },
   { name: "Suspensão", detail: "Atenção ao conjunto responsável por estabilidade e conforto." },
   { name: "Embreagem", detail: "Avaliação e reparo do sistema de transmissão de força." },
@@ -88,10 +89,6 @@ export default function Home() {
             <a className="text-link light-link" href="#servicos">Conhecer os serviços ↓</a>
           </div>
         </div>
-        <div className="hero-contact">
-          <span>Telefone</span>
-          <strong>(11) 4141-0052</strong>
-        </div>
         <div className="road-mark" aria-hidden="true">IMEC · NACIONAIS E IMPORTADOS · IMEC · NACIONAIS E IMPORTADOS</div>
       </section>
 
@@ -106,7 +103,7 @@ export default function Home() {
           </p>
         </div>
         <div className="service-grid">
-          {services.map((service, index) => (
+          {services.slice(0, 4).map((service, index) => (
             <a
               className="service-card"
               key={service.name}
@@ -122,6 +119,9 @@ export default function Home() {
               <span className="service-arrow" aria-hidden="true">↗</span>
             </a>
           ))}
+        </div>
+        <div className="services-more">
+          <a className="button button-services" href="/servicos">Veja todos os serviços <span aria-hidden="true">→</span></a>
         </div>
       </section>
 
@@ -191,14 +191,14 @@ export default function Home() {
           </address>
           <dl>
             <div><dt>Telefone</dt><dd>(11) 4141-0052</dd></div>
-            <div><dt>WhatsApp</dt><dd>(55) 95452-21201</dd></div>
+            <div><dt>WhatsApp</dt><dd>(11) 94522-1201</dd></div>
             <div><dt>Instagram</dt><dd>@imec_nacionaiseimportados</dd></div>
           </dl>
         </div>
         <div className="location-map">
           <iframe
             title="Mapa da Imec Oficina Mecânica em Itapevi"
-            src="https://www.google.com/maps?q=Rua+Maria+de+Lourdes+Chaluppe,+231,+Jardim+Rosemary,+Itapevi,+SP,+06657-150&output=embed"
+            src="https://www.google.com/maps?q=Rua+Maria+de+Lourdes+Chaluppe,+231,+Jardim+Rosemary,+Itapevi,+SP,+06657-150&z=14&output=embed"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
