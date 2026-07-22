@@ -33,7 +33,7 @@ export default function ServicesPage() {
           <a href="/#localizacao">Localização</a>
         </nav>
         <a className="button button-small" href={whatsappLink("orçamento")} target="_blank" rel="noreferrer">
-          Solicitar orçamento <span aria-hidden="true" className="wa-dot">↗</span>
+          <span className="button-label-full">Solicitar orçamento</span><span className="button-label-short">Orçamento</span> <span aria-hidden="true" className="wa-dot">↗</span>
         </a>
       </header>
 

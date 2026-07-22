@@ -59,7 +59,7 @@ export default function Home() {
           target="_blank"
           rel="noreferrer"
         >
-          Solicitar orçamento <WhatsAppIcon />
+          <span className="button-label-full">Solicitar orçamento</span><span className="button-label-short">Orçamento</span> <WhatsAppIcon />
         </a>
       </header>
 
