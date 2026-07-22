@@ -18,6 +18,8 @@ const services = [
   { name: "Freios", detail: "Inspeção e manutenção de um dos sistemas mais importantes para a segurança." },
   { name: "Motor", detail: "Manutenção e reparos com eficiência, precisão e diagnóstico cuidadoso." },
   { name: "ABS", detail: "Diagnóstico e atendimento para o sistema antitravamento dos freios." },
+  { name: "Airbag", detail: "Diagnóstico do sistema de segurança, identificação de falhas e manutenção especializada." },
+  { name: "Troca de óleo", detail: "Substituição do óleo e do filtro para ajudar a preservar o motor e seu bom funcionamento." },
 ];
 
 export default function ServicesPage() {

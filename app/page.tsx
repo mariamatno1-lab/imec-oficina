@@ -4,7 +4,7 @@ import { SiteHeader } from "./components/SiteHeader";
 export const metadata: Metadata = {
   title: "Imec Oficina Mecânica | Nacionais e Importados em Itapevi",
   description:
-    "Mecânica em geral, injeção eletrônica, suspensão, embreagem, freios, motor e ABS em Itapevi.",
+    "Mecânica em geral, injeção eletrônica, suspensão, embreagem, freios, motor, ABS, airbag e troca de óleo em Itapevi.",
 };
 
 const whatsapp = "https://wa.me/5511945221201";
@@ -20,6 +20,8 @@ const services = [
   { name: "Freios", detail: "Cuidado com um dos sistemas mais importantes para a segurança." },
   { name: "Motor", detail: "Manutenção e reparos com eficiência e precisão." },
   { name: "ABS", detail: "Atendimento para o sistema antitravamento dos freios." },
+  { name: "Airbag", detail: "Diagnóstico e manutenção do sistema de segurança do veículo." },
+  { name: "Troca de óleo", detail: "Substituição do óleo e do filtro para preservar o motor." },
 ];
 
 const reviews = [
@@ -113,7 +115,7 @@ export default function Home() {
           <p className="eyebrow light">Sobre a Imec</p>
           <h2>Eficiência e precisão para superar expectativas.</h2>
           <p>
-            A Imec é uma sólida empresa que atua no mercado automotivo na cidade de Itapevi, efetuando serviços de mecânica em geral, como injeção eletrônica, suspensão, embreagem, freios, motor, ABS, entre outros.
+            A Imec é uma sólida empresa que atua no mercado automotivo na cidade de Itapevi, efetuando serviços de mecânica em geral, como injeção eletrônica, suspensão, embreagem, freios, motor, ABS, airbag e troca de óleo.
           </p>
           <p>
             Contamos com uma equipe capacitada para oferecer a nossos clientes a segurança de que seus veículos estão recebendo tratamento adequado.
