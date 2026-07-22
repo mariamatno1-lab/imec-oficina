@@ -195,12 +195,18 @@ export default function Home() {
             <div><dt>Instagram</dt><dd>@imec_nacionaiseimportados</dd></div>
           </dl>
         </div>
-        <div className="location-visual" aria-hidden="true">
-          <span className="map-road road-a" />
-          <span className="map-road road-b" />
-          <span className="map-road road-c" />
-          <span className="map-pin">IMEC</span>
-          <p>Jardim<br />Rosemary</p>
+        <div className="location-map">
+          <iframe
+            title="Mapa da Imec Oficina Mecânica em Itapevi"
+            src="https://www.google.com/maps?q=Rua+Maria+de+Lourdes+Chaluppe,+231,+Jardim+Rosemary,+Itapevi,+SP,+06657-150&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
+          <div className="map-label" aria-hidden="true">
+            <span>Localização confirmada</span>
+            <strong>Jardim Rosemary · Itapevi</strong>
+          </div>
         </div>
       </section>
 
