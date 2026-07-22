@@ -20,24 +20,18 @@ const services = [
   { name: "ABS", detail: "Atendimento para o sistema antitravamento dos freios." },
 ];
 
-const offers = [
+const reviews = [
   {
-    label: "Atendimento pontual",
-    title: "Resolver o que seu carro precisa agora",
-    text: "Conte o que está acontecendo com o veículo e combine a avaliação diretamente com a equipe.",
-    message: "Olá, Imec! Quero agendar um atendimento pontual para meu veículo.",
+    name: "Priscila Alves Santos",
+    text: "Ninguém além deles mexe no meu carro, afinal só eles quem resolveu o problema.",
   },
   {
-    label: "Plano 90 dias",
-    title: "Acompanhamento por 3 meses",
-    text: "Converse com a Imec para definir um acompanhamento de manutenção adequado ao seu veículo.",
-    message: "Olá, Imec! Quero saber como funciona o plano de acompanhamento por 90 dias.",
+    name: "Monica Marques",
+    text: "Atendimento de primeira, melhores mecânicos da região 👏👏👏",
   },
   {
-    label: "Plano 180 dias",
-    title: "Acompanhamento por 6 meses",
-    text: "Uma opção para organizar os próximos cuidados do carro com a orientação da oficina.",
-    message: "Olá, Imec! Quero saber como funciona o plano de acompanhamento por 180 dias.",
+    name: "Breno Gabriel Mendes da Silva",
+    text: "Limpeza excelente e ótimos preços.",
   },
 ];
 
@@ -53,18 +47,18 @@ export default function Home() {
           <img src="/imec/logo.jpg" alt="Imec Nacionais e Importados" />
         </a>
         <nav aria-label="Navegação principal">
+          <a href="#inicio">Home</a>
+          <a href="#sobre">Sobre nós</a>
           <a href="#servicos">Serviços</a>
-          <a href="#sobre">Sobre</a>
-          <a href="#avaliacoes">Avaliações</a>
           <a href="#localizacao">Localização</a>
         </nav>
         <a
           className="button button-small"
-          href={whatsappLink("Olá, Imec! Quero agendar uma consulta para meu veículo.")}
+          href={whatsappLink("Olá, Imec! Quero solicitar um orçamento para meu veículo.")}
           target="_blank"
           rel="noreferrer"
         >
-          Agendar consulta <WhatsAppIcon />
+          Solicitar orçamento <WhatsAppIcon />
         </a>
       </header>
 
@@ -85,11 +79,11 @@ export default function Home() {
           <div className="hero-actions">
             <a
               className="button"
-              href={whatsappLink("Olá, Imec! Quero agendar uma consulta para meu veículo.")}
+              href={whatsappLink("Olá, Imec! Quero solicitar um orçamento para meu veículo.")}
               target="_blank"
               rel="noreferrer"
             >
-              Agendar consulta <WhatsAppIcon />
+              Solicitar orçamento <WhatsAppIcon />
             </a>
             <a className="text-link light-link" href="#servicos">Conhecer os serviços ↓</a>
           </div>
@@ -160,51 +154,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="offers" id="planos">
-        <div className="section-heading compact">
-          <div>
-            <p className="eyebrow">Escolha como começar</p>
-            <h2>Do reparo de agora<br />ao próximo cuidado.</h2>
-          </div>
-          <p>As condições e o escopo de cada opção são definidos diretamente com a equipe, de acordo com o veículo.</p>
-        </div>
-        <div className="offer-grid">
-          {offers.map((offer, index) => (
-            <article className={`offer-card ${index === 1 ? "featured" : ""}`} key={offer.label}>
-              <p className="offer-label">{offer.label}</p>
-              <h3>{offer.title}</h3>
-              <p>{offer.text}</p>
-              <a className="offer-link" href={whatsappLink(offer.message)} target="_blank" rel="noreferrer">
-                Consultar no WhatsApp <WhatsAppIcon />
-              </a>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section className="proof" id="avaliacoes">
         <div className="proof-copy">
-          <p className="eyebrow light">Avaliações</p>
-          <h2>Confiança começa com transparência.</h2>
-          <p>
-            O site atual da Imec não publica depoimentos ou notas de clientes. Por isso, esta nova versão não atribui avaliações sem uma fonte verificável.
-          </p>
-          <p className="proof-note">Quando houver avaliações autorizadas, este espaço está pronto para recebê-las.</p>
+          <p className="eyebrow light">Avaliações no Google</p>
+          <div className="rating-line"><strong>5,0</strong><span>★★★★★</span></div>
+          <h2>Quem conhece,<br />recomenda.</h2>
+          <p className="proof-note">37 avaliações públicas no perfil da Imec no Google.</p>
           <a
             className="button button-white"
-            href={whatsappLink("Olá, Imec! Quero conhecer o atendimento da oficina.")}
+            href={whatsappLink("Olá, Imec! Vi as avaliações e quero solicitar um orçamento.")}
             target="_blank"
             rel="noreferrer"
           >
-            Conhecer o atendimento <WhatsAppIcon />
+            Solicitar orçamento <WhatsAppIcon />
           </a>
         </div>
-        <div className="proof-image">
-          <img src="/imec/oficina-04.jpg" alt="Estrutura da oficina Imec" />
-          <div className="proof-badge">
-            <span>Compromisso declarado</span>
-            <strong>Segurança, eficiência e precisão.</strong>
-          </div>
+        <div className="reviews-list" aria-label="Avaliações de clientes no Google">
+          {reviews.map((review) => (
+            <blockquote className="review-card" key={review.name}>
+              <span className="review-stars" aria-label="5 de 5 estrelas">★★★★★</span>
+              <p>“{review.text}”</p>
+              <footer>{review.name}<small>Avaliação no Google</small></footer>
+            </blockquote>
+          ))}
         </div>
       </section>
 
@@ -220,16 +192,8 @@ export default function Home() {
           <dl>
             <div><dt>Telefone</dt><dd>(11) 4141-0052</dd></div>
             <div><dt>WhatsApp</dt><dd>(55) 95452-21201</dd></div>
-            <div><dt>Instagram</dt><dd>@imec_oficinamecanica</dd></div>
+            <div><dt>Instagram</dt><dd>@imec_nacionaiseimportados</dd></div>
           </dl>
-          <a
-            className="button"
-            href={whatsappLink("Olá, Imec! Pode me enviar a localização da oficina?")}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Pedir localização <WhatsAppIcon />
-          </a>
         </div>
         <div className="location-visual" aria-hidden="true">
           <span className="map-road road-a" />
@@ -245,11 +209,11 @@ export default function Home() {
         <h2>Conte para a Imec<br />o que seu carro precisa.</h2>
         <a
           className="button button-dark"
-          href={whatsappLink("Olá, Imec! Quero agendar uma consulta para meu veículo.")}
+          href={whatsappLink("Olá, Imec! Quero solicitar um orçamento para meu veículo.")}
           target="_blank"
           rel="noreferrer"
         >
-          Agendar consulta <WhatsAppIcon />
+          Solicitar orçamento <WhatsAppIcon />
         </a>
       </section>
 
